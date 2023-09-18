@@ -8,20 +8,20 @@
   position: relative;
   /*font-size: .85em; /* reduce to avoid some breaks */
 }
+
 .hugo-cite-group
   .hugo-cite-citation {
     visibility: hidden;
     background-color: #ffffff;
     color: inherit;
     border: 1px solid currentColor;
-    padding: 1rem;
+    padding: 0.5rem;
     position: absolute;
-    width: 350px;
+    width: 340px;
     max-width: 100vw;
     z-index: 1;
     bottom: 140%;
-    left: 0;
-    margin-left: -50px;
+    left: -3rem;
 
     z-index: 2;
     transition:
@@ -39,6 +39,19 @@
     transform: translateY(0);
 }
 
+@media only screen and (max-width: 680px) {
+  .hugo-cite-group
+    .hugo-cite-citation {
+      width: 0;
+      border: 0;
+      padding: 0;
+      margin: 0;
+    }
+  .hugo-cite-group:hover
+    .hugo-cite-citation {
+      visibility: hidden;
+    }
+}
 /* Visually Hidden utility class */
 .visually-hidden {
   clip: rect(1px, 1px, 1px, 1px);
