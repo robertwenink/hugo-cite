@@ -6,7 +6,7 @@
   display: inline-block;
   vertical-align: baseline; /*compensate for lower height */
   position: relative;
-  /* font-size: .85em; /* reduce to avoid some breaks */
+  /*font-size: .85em; /* reduce to avoid some breaks */
 }
 .hugo-cite-group
   .hugo-cite-citation {
@@ -31,14 +31,12 @@
     opacity: 0;
     transform: translateY(-8px);
 }
-.hugo-cite-group
-  a:hover {
-    .hugo-cite-citation {
-      visibility: visible;
-      transition: visibility 0s 0s, transform .3s, opacity .3s;
-      opacity: 1;
-      transform: translateY(0);
-  }
+.hugo-cite-group:hover
+  .hugo-cite-citation {
+    visibility: visible;
+    transition: visibility 0s 0s, transform .3s, opacity .3s;
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Visually Hidden utility class */
