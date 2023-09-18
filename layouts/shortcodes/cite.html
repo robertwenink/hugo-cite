@@ -107,7 +107,7 @@
   {{- $bibliography := getJSON $bibliographyPath -}}
 {{- /* -------------------- END Bibliography path -------------------- */ -}}
 
-  <span class="hugo-cite-intext" itemprop="citation">{{- if not $textCite }}({{- end }}
+  <span class="hugo-cite-intext" itemprop="citation">
 
     {{- /* Range over citation keys */ -}}
 
@@ -116,6 +116,9 @@
       {{- range where $bibliography "id" "eq" $key -}}
         {{- $currentRef := . -}}
         <span class="hugo-cite-group">
+          {{/* Add ( if not a textcite and if first entry to avoid break */}}
+          {{- if and (not $textCite) (eq $keyIndex 0) -}}({{- end -}}
+
 
         {{/* Add to the collection of cited references */}}
         {{- $.Page.Scratch.SetInMap "citedBib" $key $currentRef -}}
